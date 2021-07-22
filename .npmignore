@@ -13,7 +13,7 @@ test/functional/database
 *.sublime-workspace
 *.log
 adonis-typings
-provider
+providers
 src
 templates
 dist
