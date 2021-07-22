@@ -14,7 +14,7 @@ export default async function instructions(projectRoot: string, app: Application
 		configPath,
 		getStub('cloudinary.txt')
 	)
-	cloudinaryConfig.commit()
+	cloudinaryConfig.apply().commit()
 	const configDir = app.directoriesMap.get('config') || 'config'
 	sink.logger.action('create').succeeded(`${configDir}/cloudinary.ts`)
 
