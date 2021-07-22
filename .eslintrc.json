@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "plugin:adonis/typescriptApp"
+    ],
+    "rules": {
+        "no-unexpected-multiline": "error",
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": ["error", "as-needed"],
+        "block-spacing": ["error", "always"],
+        "camelcase": ["error", { "ignoreImports": true }],
+        "comma-dangle": ["error", "always-multiline"],
+        "comma-spacing": "error",
+        "curly": ["error", "all"],
+        "eol-last": "error",
+        "eqeqeq": ["error", "smart"],
+        "func-call-spacing": "error",
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", "tab"],
+        "key-spacing": "error",
+        "keyword-spacing": "error",
+        "linebreak-style": "error",
+        "max-len": ["error", { "code": 120 }],
+        "no-var": "error",
+        "object-curly-spacing": ["error", "always"],
+        "prefer-const": "error",
+        "quote-props": ["error", "consistent-as-needed", { "keywords": true }],
+        "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+        "space-before-blocks": "error",
+        "space-before-function-paren": "off",
+        "@typescript-eslint/space-before-function-paren": ["error", { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
+        "space-in-parens": ["error", "never"],
+        "spaced-comment": ["error", "always", { "block": { "balanced": true, "exceptions": ["*"] } }],
+        "switch-colon-spacing": "error"
+    }
+}

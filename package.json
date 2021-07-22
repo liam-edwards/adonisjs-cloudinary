@@ -1,0 +1,62 @@
+{
+	"name": "adonisjs-cloudinary",
+	"version": "0.0.1",
+	"description": "",
+	"main": "./build/providers/CloudinaryProvider.js",
+	"files": [
+		"build/adonis-typings",
+		"build/providers",
+		"build/src",
+		"build/templates",
+		"build/instructions.js"
+	],
+	"scripts": {
+		"lint": "eslint . --ext=.ts",
+		"clean": "rm -rf build",
+		"compile": "npm run lint && npm run clean && tsc && npm run copyfiles",
+		"copyfiles": "copyfiles \"templates/**/*.txt\" build",
+		"build": "npm run compile",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"types": "./build/adonis-typings/index.d.ts",
+	"keywords": [
+		"AdonisJS",
+		"Cloudinary",
+		"Adonis Cloudinary"
+	],
+	"author": "Liam Edwards",
+	"license": "MIT",
+	"devDependencies": {
+		"@adonisjs/core": "^5.1.10",
+		"@adonisjs/require-ts": "^2.0.7",
+		"@adonisjs/sink": "^5.1.5",
+		"@types/node": "^16.4.0",
+		"@typescript-eslint/eslint-plugin": "^4.28.4",
+		"@typescript-eslint/parser": "^4.28.4",
+		"adonis-preset-ts": "^2.1.0",
+		"copyfiles": "^2.4.1",
+		"eslint": "^7.31.0",
+		"eslint-plugin-adonis": "^1.3.3",
+		"typescript": "^4.3.5"
+	},
+	"peerDependencies": {
+		"@adonisjs/core": "^5.1.10",
+		"@adonisjs/require-ts": "^2.0.7"
+	},
+	"dependencies": {
+		"cloudinary": "^1.26.2"
+	},
+	"adonisjs": {
+		"instructions": "./build/instructions.js",
+		"env": {
+			"CLOUDINARY_CLOUD_NAME": "",
+			"CLOUDINARY_API_KEY": "",
+			"CLOUDINARY_API_SECRET": "",
+			"CLOUDINARY_SECURE": true
+		},
+		"types": "adonisjs-cloudinary",
+		"providers": [
+			"adonisjs-cloudinary"
+		]
+	}
+}
