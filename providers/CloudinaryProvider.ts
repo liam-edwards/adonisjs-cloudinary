@@ -1,6 +1,6 @@
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import CloudinaryWrapper from '../src/CloudinaryWrapper'
-import * as Cloudinary from 'cloudinary'
+import * as cloudinary from 'cloudinary'
 
 export default class CloudinaryProvider {
 	public static needsApplication = true
@@ -12,8 +12,7 @@ export default class CloudinaryProvider {
 				.resolveBinding('Adonis/Core/Config')
 				.get('cloudinary', {})
 
-			const cloudinary = Cloudinary.v2
-			return new CloudinaryWrapper(config, cloudinary)
+			return new CloudinaryWrapper(config, cloudinary.v2)
 		})
 	}
 }
