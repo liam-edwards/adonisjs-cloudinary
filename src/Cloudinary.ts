@@ -6,7 +6,7 @@ import {
 	TransformationOptions,
 } from 'cloudinary'
 
-export default class CloudinaryWrapper {
+export default class Cloudinary {
 	private readonly config: CloudinaryConfig
 	private readonly cloudinary
 	private uploadResponse: UploadApiResponse
