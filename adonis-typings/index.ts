@@ -8,4 +8,6 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		secure: boolean
 		scaling: cloudinary.TransformationOptions
 	}
+
+	export * from 'cloudinary'
 }
