@@ -5,7 +5,7 @@ import {
 	UploadApiResponse,
 	TransformationOptions,
 } from 'cloudinary'
-import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser';
+import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 
 export default class Cloudinary {
 	private readonly config: CloudinaryConfig

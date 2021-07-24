@@ -3,9 +3,9 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		ResponseCallback,
 		TransformationOptions,
 		UploadApiOptions,
-		UploadApiResponse
+		UploadApiResponse,
 	} from 'cloudinary'
-	import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser';
+	import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 
 	export interface CloudinaryConfig {
 		cloudName: string
