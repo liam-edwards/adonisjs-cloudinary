@@ -58,7 +58,7 @@ export default class Cloudinary {
 		} else {
 			filePath = Cloudinary.getPathFromFile(file)
 		}
-		this.uploadResponse = await this.cloudinary.uploader.upload(filePath, {
+		return this.uploadResponse = await this.cloudinary.uploader.upload(filePath, {
 			/* eslint-disable camelcase */
 			public_id: publicId,
 			/* eslint-enable camelcase */
@@ -79,7 +79,7 @@ export default class Cloudinary {
 		} else {
 			filePath = Cloudinary.getPathFromFile(file)
 		}
-		this.uploadResponse = await this.cloudinary.uploader.unsigned_upload(
+		return this.uploadResponse = await this.cloudinary.uploader.unsigned_upload(
 			filePath,
 			uploadPreset,
 			{
