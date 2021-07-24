@@ -49,7 +49,12 @@ export default class Cloudinary {
 		} else {
 			filePath = Cloudinary.getPathFromFile(file)
 		}
-		this.uploadResponse = await this.cloudinary.uploader.upload(filePath, { publicId, ...uploadOptions }, callback)
+		this.uploadResponse = await this.cloudinary.uploader.upload(filePath, {
+			/* eslint-disable camelcase */
+			public_id: publicId,
+			/* eslint-enable camelcase */
+			...uploadOptions,
+		}, callback)
 	}
 
 	public async unsignedUpload(
@@ -68,7 +73,12 @@ export default class Cloudinary {
 		this.uploadResponse = await this.cloudinary.uploader.unsigned_upload(
 			filePath,
 			uploadPreset,
-			{ publicId, ...uploadOptions },
+			{
+				/* eslint-disable camelcase */
+				public_id: publicId,
+				/* eslint-enable camelcase */
+				...uploadOptions,
+			},
 			callback
 		)
 	}
