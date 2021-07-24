@@ -1,41 +1,62 @@
 declare module '@ioc:Adonis/Addons/Cloudinary' {
-	import * as cloudinary from 'cloudinary'
+	import {
+		ResponseCallback,
+		TransformationOptions,
+		UploadApiOptions,
+		UploadApiResponse
+	} from 'cloudinary'
+	import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser';
 
 	export interface CloudinaryConfig {
 		cloudName: string
 		apiKey: string
 		apiSecret: string
 		secure: boolean
-		scaling: cloudinary.TransformationOptions
+		scaling: TransformationOptions
 	}
 
 	export function upload(
-		file,
+		filePath: string,
 		publicId: string|null,
-		uploadOptions: cloudinary.UploadApiOptions,
-		callback?: cloudinary.ResponseCallback
+		uploadOptions?: UploadApiOptions,
+		callback?: ResponseCallback
+	)
+
+	export function upload(
+		file: MultipartFileContract,
+		publicId: string|null,
+		uploadOptions?: UploadApiOptions,
+		callback?: ResponseCallback
 	)
 
 	export function unsignedUpload(
-		file,
+		filePath: string,
 		uploadPreset: string,
 		publicId: string|null,
-		uploadOptions: cloudinary.UploadApiOptions,
-		callback?: cloudinary.ResponseCallback
+		uploadOptions?: UploadApiOptions,
+		callback?: ResponseCallback
 	)
 
-	export function getResult(): cloudinary.UploadApiResponse
+	export function unsignedUpload(
+		file: MultipartFileContract,
+		uploadPreset: string,
+		publicId: string|null,
+		uploadOptions?: UploadApiOptions,
+		callback?: ResponseCallback
+	)
+
+	export function getResult(): UploadApiResponse
 
 	export function getPublicId(): string
 
 	export function show(
 		publicId,
-		options: cloudinary.TransformationOptions
+		options: TransformationOptions
 	): string
 
 	export function secureShow(
 		publicId,
-		options: cloudinary.TransformationOptions
+		options: TransformationOptions
 	): string
 
 	export function destroy(
