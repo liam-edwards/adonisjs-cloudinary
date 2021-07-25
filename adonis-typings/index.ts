@@ -21,7 +21,7 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		apiKey: string
 		apiSecret: string
 		secure: boolean
-		scaling: TransformationOptions
+		[key: string]: TransformationOptions
 	}
 
 	export function upload(
@@ -29,14 +29,14 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		publicId: string|null,
 		uploadOptions?: UploadApiOptions,
 		callback?: ResponseCallback
-	): UploadApiResponse
+	): Promise<UploadApiResponse>
 
 	export function upload(
 		file: MultipartFileContract,
 		publicId: string|null,
 		uploadOptions?: UploadApiOptions,
 		callback?: ResponseCallback
-	): UploadApiResponse
+	): Promise<UploadApiResponse>
 
 	export function unsignedUpload(
 		filePath: string,
@@ -44,7 +44,7 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		publicId: string|null,
 		uploadOptions?: UploadApiOptions,
 		callback?: ResponseCallback
-	): UploadApiResponse
+	): Promise<UploadApiResponse>
 
 	export function unsignedUpload(
 		file: MultipartFileContract,
@@ -52,7 +52,7 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 		publicId: string|null,
 		uploadOptions?: UploadApiOptions,
 		callback?: ResponseCallback
-	): UploadApiResponse
+	): Promise<UploadApiResponse>
 
 	export function getResult(): UploadApiResponse
 
