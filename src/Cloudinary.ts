@@ -9,10 +9,12 @@
 
 import { CloudinaryConfig } from '@ioc:Adonis/Addons/Cloudinary'
 import {
-	UploadApiOptions,
+	DeliveryType,
+	ResourceType,
 	ResponseCallback,
-	UploadApiResponse,
 	TransformationOptions,
+	UploadApiOptions,
+	UploadApiResponse,
 } from 'cloudinary'
 import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 
@@ -112,7 +114,13 @@ export default class Cloudinary {
 		return this.show(publicId, { ...options, secure: true })
 	}
 
-	public async destroy(publicId, options = {}) {
+	public async destroy(publicId, options?: {
+		/* eslint-disable camelcase */
+		resource_type?: ResourceType,
+		/* eslint-enable camelcase */
+		type?: DeliveryType,
+		invalidate?: boolean,
+	}) {
 		return await this.cloudinary.uploader.destroy(publicId, options)
 	}
 }

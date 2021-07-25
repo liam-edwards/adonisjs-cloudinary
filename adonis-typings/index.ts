@@ -9,6 +9,8 @@
 
 declare module '@ioc:Adonis/Addons/Cloudinary' {
 	import {
+		DeliveryType,
+		ResourceType,
 		ResponseCallback,
 		TransformationOptions,
 		UploadApiOptions,
@@ -60,16 +62,22 @@ declare module '@ioc:Adonis/Addons/Cloudinary' {
 
 	export function show(
 		publicId,
-		options: TransformationOptions
+		options?: TransformationOptions
 	): string
 
 	export function secureShow(
 		publicId,
-		options: TransformationOptions
+		options?: TransformationOptions
 	): string
 
 	export function destroy(
 		publicId,
-		options
+		options?: {
+			/* eslint-disable camelcase */
+			resource_type?: ResourceType,
+			/* eslint-enable camelcase */
+			type?: DeliveryType,
+			invalidate?: boolean,
+		}
 	)
 }
